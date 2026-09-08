@@ -1,0 +1,8 @@
+p = int(input("price:"))
+d = int(input("discount:"))
+v = int(input("vat:"))
+b = p * (1 - (d / 100))
+a = b * (v / 100)
+print(f'База после скидки: {b}')
+print(f'НДС: {a}')
+print(f'Итого к оплате: {b + a}')
