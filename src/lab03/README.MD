@@ -72,8 +72,6 @@ def top_n(freq: dict[str, int], n: int = 5) -> list[tuple[str, int]]:
 
 ```
 import sys
-import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 
 from src.lib.text.normalize import normalize
 from src.lib.text.tokenizer import tokenize
