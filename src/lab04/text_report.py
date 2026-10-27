@@ -1,15 +1,15 @@
 import argparse
 from collections import Counter
 
-from ..lib.text.normalize import normalize
-from ..lib.text.tokenizer import tokenize
 from ..lib.text.top_n import top_n
 from .io_txt_csv import read_text, write_csv
 
 
 def frequencies_from_text(text: str) -> dict[str, int]:
+    from ..lib.text.normalize import normalize  # из ЛР3
+    from ..lib.text.tokenizer import tokenize  # из ЛР3
     tokens = tokenize(normalize(text))
-    return Counter(tokens)
+    return Counter(tokens)  # dict-like
 
 
 def sorted_word_counts(freq: dict[str, int]) -> list[tuple[str, int]]:
