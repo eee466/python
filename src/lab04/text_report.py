@@ -6,10 +6,10 @@ from .io_txt_csv import read_text, write_csv
 
 
 def frequencies_from_text(text: str) -> dict[str, int]:
-    from ..lib.text.normalize import normalize  # из ЛР3
-    from ..lib.text.tokenizer import tokenize  # из ЛР3
+    from ..lib.text.normalize import normalize  
+    from ..lib.text.tokenizer import tokenize 
     tokens = tokenize(normalize(text))
-    return Counter(tokens)  # dict-like
+    return Counter(tokens)  
 
 
 def sorted_word_counts(freq: dict[str, int]) -> list[tuple[str, int]]:
@@ -18,7 +18,7 @@ def sorted_word_counts(freq: dict[str, int]) -> list[tuple[str, int]]:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Отчёт по частотам слов")
-    parser.add_argument("--in", dest="input", default="data/lab04/input.txt")
+    parser.add_argument("--in", default="data/lab04/input.txt")
     parser.add_argument("--out", dest="output", default="data/lab04/report.csv")
     parser.add_argument("--encoding", default="utf-8")
     args = parser.parse_args()
